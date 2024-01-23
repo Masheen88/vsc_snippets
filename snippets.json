@@ -1,0 +1,27 @@
+{
+  "id": 1,
+  "parentId": -1,
+  "label": "snippets",
+  "lastId": 5,
+  "folder": true,
+  "children": [
+    { "id": 2, "parentId": 1, "label": "CSS", "folder": true, "children": [] },
+    { "id": 3, "parentId": 1, "label": "HTML", "folder": true, "children": [] },
+    {
+      "id": 4,
+      "parentId": 1,
+      "label": "JS",
+      "folder": true,
+      "children": [
+        {
+          "id": 5,
+          "parentId": 4,
+          "label": "api FETCH requests",
+          "value": "// NOTE GET request from the API or local json file\ngetComments = async () => {\n  console.log(\"getting comment data from mockapi...\");\n\n  try {\n    const response = await fetch(COMMENTS_ENDPOINT); // url you want get data from\n    if (!response.ok) {\n      throw new Error(`HTTP error! status: ${response.status}`);\n    }\n    const resp = await response.json(); // parsing the response as JSON\n    return resp;\n  } catch (error) {\n    console.log(\"Oh no! There was an error with getting your comment.\", error);\n  }\n};\n\n// NOTE POST requests from the API or local json file\npostComment = async (commentData) => {\n  console.log(\"posting comment\", commentData);\n  try {\n    const response = await fetch(COMMENTS_ENDPOINT, { // url you want to post to\n      method: \"POST\", // type of request\n      headers: {\n        'Content-Type': 'application/json', // type of data sent to the server\n      },\n      body: JSON.stringify({ commentName: commentData }), // data you want to update\n    });\n    if (!response.ok) {\n      throw new Error(`HTTP error! status: ${response.status}`);\n    }\n    const resp = await response.json(); // parsing the response as JSON\n    return resp;\n  } catch (error) {\n    console.log(\"Oh no! There was an error with posting your comment.\", error);\n  }\n};\n\n// NOTE PUT request from the API or local json file\nupdateComment = async (commentData, commentId) => {\n  console.log(\"updating comment\", commentData);\n  try {\n    const response = await fetch(COMMENTS_ENDPOINT + `/${commentId}`, { // url + id you want to update\n      method: \"PUT\", // type of request\n      headers: {\n        'Content-Type': 'application/json', // type of data sent to the server\n      },\n      body: JSON.stringify({ commentName: commentData }), // data you want to update\n    });\n    if (!response.ok) {\n      throw new Error(`HTTP error! status: ${response.status}`);\n    }\n    const resp = await response.json(); // parsing the response as JSON\n    return resp;\n  } catch (error) {\n    console.log(\"Oh no! There was an error with updating your comment.\", error);\n  }\n};\n\n// NOTE DELETE request from the API or local json file\ndeleteComment = async (commentId) => {\n  console.log(\"deleting comment\", commentId);\n  try {\n    const response = await fetch(COMMENTS_ENDPOINT + `/${commentId}`, { // url + id you want to delete\n      method: \"DELETE\", // type of request\n    });\n    if (!response.ok) {\n      throw new Error(`HTTP error! status: ${response.status}`);\n    }\n    return response; // The DELETE request might not return a JSON response\n  } catch (error) {\n    console.log(\"Oh no! There was an error with deleting your comment.\", error);\n  }\n};\n",
+          "language": ".js",
+          "children": []
+        }
+      ]
+    }
+  ]
+}
