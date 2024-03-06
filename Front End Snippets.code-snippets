@@ -1,4 +1,13 @@
 {
+	"Sample Array Data": {
+		"prefix": "mv",
+		"description": "Sample Array Data",
+		"scope": "javascript",
+		"body": [
+			"  let myNames = [\"John\", \"Paul\", \"George\", \"Ringo\", \"Yoko\"];",
+			"  let myNums = [1, 2, 3, 4, 5];"
+		]
+	},
 	"api jQuery/AJAX requests": {
 		"prefix": "mc-JQuery-AJAX",
 		"description": "api jQuery/AJAX requests",
