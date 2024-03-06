@@ -10,10 +10,10 @@
 		"scope": "javascript,typescript",
 		"prefix": "forloop",
 		"body": [
-        "for (let ${1|i,x,y,index|} = 0; $1 < ${2|array.length, 10|}; $1++) {",
-        "\t$0",
-        "}"
-    ],
+			"for (let ${1|i,x,y,index|} = 0; $1 < ${2|array.length, 10|}; $1++) {",
+			"\t$0",
+			"} // basic for loop"
+		],
 		"description": "basic for loop"
 	}
 }
