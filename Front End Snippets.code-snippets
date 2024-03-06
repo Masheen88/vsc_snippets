@@ -1,0 +1,93 @@
+{
+	"api jQuery/AJAX requests": {
+		"prefix": "mc-JQuery-AJAX",
+		"description": "api jQuery/AJAX requests",
+		"scope": "javascript",
+		"body": [
+			"//NOTE GET request from the API or local json file",
+			"getComments = async () => {",
+			"  console.log(\"getting comment data from mockapi...\");",
+			"",
+			"  try {",
+			"    const resp = await $.ajax({",
+			"      url: COMMENTS_ENDPOINT, // url you want get data from",
+			"      method: \"GET\",",
+			"      dataType: \"json\", // expected data type of the response from the server",
+			"    });",
+			"    // console.log(\"This is my returned api data:\", data);",
+			"    return resp;",
+			"  } catch (error) {",
+			"    console.log(\"Oh no! There was an error with getting your comment.\", error);",
+			"  }",
+			"};",
+			"",
+			"//NOTE POST requests from the API or local json file",
+			"postComment = async (commentData) => {",
+			"  console.log(\"posting comment\", commentData);",
+			"  try {",
+			"    const resp = await $.ajax({",
+			"      url: COMMENTS_ENDPOINT, // url you want to post to",
+			"      method: \"POST\", // type of request",
+			"      dataType: \"json\", // expected data type of the response from the server",
+			"      data: JSON.stringify({ commentName: commentData }), // data you want to update",
+			"      contentType: \"application/json\", // type of data sent to the server",
+			"    });",
+			"    // console.log(data);",
+			"    return resp;",
+			"  } catch (error) {",
+			"    console.log(\"Oh no! There was an error with posting your comment.\", error);",
+			"  }",
+			"};",
+			"",
+			"//NOTE PUT request from the API or local json file",
+			"updateComment = async (commentData, commentId) => {",
+			"  console.log(\"posting comment\", commentData);",
+			"  try {",
+			"    const resp = await $.ajax({",
+			"      url: COMMENTS_ENDPOINT + `${commentId}`, //url + id you want to update",
+			"      method: \"PUT\", // type of request",
+			"      dataType: \"json\", // expected data type of the response from the server",
+			"      data: JSON.stringify({ commentName: commentData }), // data you want to update",
+			"      contentType: \"application/json\", // type of data sent to the server",
+			"    });",
+			"    // console.log(data);",
+			"    return resp;",
+			"  } catch (error) {",
+			"    console.log(\"Oh no! There was an error with updating your comment.\", error);",
+			"  }",
+			"};",
+			"",
+			"//NOTE DELETE request from the API or local json file",
+			"deleteComment = async (commentId) => {",
+			"  console.log(\"deleting comment\", commentId);",
+			"  try {",
+			"    const resp = await $.ajax({",
+			"      url: COMMENTS_ENDPOINT + \"/\" + commentId, // url + id you want to delete",
+			"      method: \"DELETE\", // type of request",
+			"    });",
+			"    // console.log(data);",
+			"    return resp;",
+			"  } catch (error) {",
+			"    console.log(\"Oh no! There was an error with deleting your comment.\", error);",
+			"  }",
+			"};",
+			""
+		]
+	}
+	// Place your global snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Placeholders with the same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"scope": "javascript,typescript",
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+}
