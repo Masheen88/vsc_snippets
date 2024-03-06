@@ -1,6 +1,6 @@
 {
 	"api jQuery/AJAX requests": {
-		"prefix": "mc-JQuery-AJAX",
+		"prefix": "mc-jQuery-AJAX",
 		"description": "api jQuery/AJAX requests",
 		"scope": "javascript",
 		"body": [
